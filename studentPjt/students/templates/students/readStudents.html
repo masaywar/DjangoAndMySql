@@ -1,0 +1,30 @@
+<DOCTYPE html>
+
+
+<html>
+    <head>
+        <meta ttp-equiv="content-Type" content="text/html"; charset=UTF-8>
+        <title>Title</title>
+    </head>
+
+    <body>
+        <p>Read student</p>
+        {% if student_list %}
+        <o1>
+               
+            {% for s in student_list %}
+            <li>
+                <a href="{%url 'students:det' s.s_name %}">{{s.s_name}}</a>
+                <a href=""> Modify </a>
+                <a href=""> Delete </a>
+            </li>   
+            {% endfor  %}
+        </o1>
+
+        {%else%}
+            <p>Student: 0</p>
+
+        {% endif %}
+            <a href="{% url 'students:reg' %}">Add student</a>
+    </body>
+</html>
